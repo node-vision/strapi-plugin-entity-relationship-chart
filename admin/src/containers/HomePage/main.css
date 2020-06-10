@@ -1,0 +1,35 @@
+.srd-diagram {
+  height: 80vh;
+}
+
+.srd-default-link path{
+  stroke: #000;
+}
+
+.erc-header-title p{
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: normal;
+  color: rgb(120, 126, 143);
+  margin: 0px;
+  overflow: hidden;
+}
+
+.erc-header-title h1{
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 100%;
+  margin-bottom: 0;
+  padding-right: 18px;
+  font-size: 2.4rem;
+  line-height: normal;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

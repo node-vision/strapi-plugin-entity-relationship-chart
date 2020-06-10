@@ -1,0 +1,19 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/",
+      "handler": "entity-relationship-chart.index",
+      "config": {
+        "policies": []
+      }
+    },{
+      "method": "GET",
+      "path": "/er-data",
+      "handler": "entity-relationship-chart.getERData",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "strapi-plugin-entity-relationship-chart",
+  "version": "0.1.0",
+  "description": "Plugin displays Entity Relationship Diagram of all Strapi models, fields and relations.",
+  "strapi": {
+    "name": "Entity Relationship Chart",
+    "icon": "columns",
+    "description": "Plugin displays Entity Relationship Diagram of all Strapi models, fields and relations."
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "dagre": "^0.8.5",
+    "storm-react-diagrams": "^5.2.1"
+  },
+  "author": {
+    "name": "Node Vision",
+    "email": "info@nodevision.com.au",
+    "url": "https://nodevision.com.au"
+  },
+  "maintainers": [
+    {
+      "name": "Roman Mandryk",
+      "email": "",
+      "url": ""
+    }
+  ],
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}
