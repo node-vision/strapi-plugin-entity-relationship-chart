@@ -85,17 +85,33 @@ function drawNodes(data){
   return {engine, model};
 }
 
+async function getERData(){
+  let jwt = localStorage.getItem('jwtToken');
+  jwt = jwt.replace(/['"]+/g, '');
+  const res = await axios.get('/entity-relationship-chart/er-data',
+    { headers: { Authorization: `Bearer ${jwt}`}});
+  return res;
+}
+
 const HomePage = () => {
   const [engine, setEngine] = useState();
+  const [error, setError] = useState();
   useEffect(() => {
     async function getData(){
-      const res = await axios.get('/entity-relationship-chart/er-data');
-      const {engine, model} = drawNodes(res.data.data);
-      setEngine(engine);
-      autoLayout(engine, model);
+      try {
+        const res = await getERData();
+        const {engine, model} = drawNodes(res.data.data);
+        setEngine(engine);
+        autoLayout(engine, model);
+      } catch (e) {
+        setError(e);
+      }
+
     }
     getData();
   }, []);
+
+
 
   return (
     <div style={{padding: '25px 30px'}}>
@@ -104,6 +120,10 @@ const HomePage = () => {
         <p>Displays Entity Relationship Diagram of all Strapi models, fields and relations.</p>
       </div>
 
+      {error && <div>
+        <br/>
+        <h2>Error getting Entity Relationship data. Please check if <a href="/admin/plugins/users-permissions/roles/edit/1">permissions</a> are enabled</h2>
+      </div>}
       {engine && <SRD.DiagramWidget diagramEngine={engine}/>}
     </div>
   );
