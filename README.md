@@ -2,7 +2,7 @@
 
 Plugin displays Entity Relationship Diagram of all Strapi models, fields and relations.
 
-![Preview](/preview.png)
+![Preview](https://raw.githubusercontent.com/node-vision/strapi-plugin-entity-relationship-chart/master/preview.png)
 
 How to install:
 --------
