@@ -2,13 +2,16 @@
   "name": "strapi-plugin-entity-relationship-chart",
   "version": "0.1.1",
   "description": "Plugin displays Entity Relationship Diagram of all Strapi models, fields and relations.",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/node-vision/strapi-plugin-entity-relationship-chart"
+  },
   "strapi": {
     "name": "Entity Relationship Chart",
     "icon": "columns",
     "description": "Plugin displays Entity Relationship Diagram of all Strapi models, fields and relations."
   },
   "dependencies": {
-    "axios": "^0.19.2",
     "dagre": "^0.8.5",
     "storm-react-diagrams": "^5.2.1"
   },

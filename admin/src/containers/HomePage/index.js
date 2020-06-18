@@ -1,5 +1,5 @@
 import React, {memo, useEffect, useState} from 'react';
-import axios from 'axios';
+import {request} from "strapi-helper-plugin";
 import pluginId from '../../pluginId';
 import * as SRD from "storm-react-diagrams";
 import dagre from "dagre";
@@ -86,11 +86,7 @@ function drawNodes(data){
 }
 
 async function getERData(){
-  let jwt = localStorage.getItem('jwtToken');
-  jwt = jwt.replace(/['"]+/g, '');
-  const res = await axios.get('/entity-relationship-chart/er-data',
-    { headers: { Authorization: `Bearer ${jwt}`}});
-  return res;
+  return await request('/entity-relationship-chart/er-data');
 }
 
 const HomePage = () => {
@@ -100,7 +96,7 @@ const HomePage = () => {
     async function getData(){
       try {
         const res = await getERData();
-        const {engine, model} = drawNodes(res.data.data);
+        const {engine, model} = drawNodes(res.data);
         setEngine(engine);
         autoLayout(engine, model);
       } catch (e) {
@@ -122,7 +118,8 @@ const HomePage = () => {
 
       {error && <div>
         <br/>
-        <h2>Error getting Entity Relationship data. Please check if <a href="/admin/plugins/users-permissions/roles/edit/1">permissions</a> are enabled</h2>
+        <h2>{error.toString()}</h2>
+        <textarea rows={10} cols={200} disabled="disabled" style={{fontSize: 10, fontFamily:'Courier'}}>{error.stack}</textarea>
       </div>}
       {engine && <SRD.DiagramWidget diagramEngine={engine}/>}
     </div>

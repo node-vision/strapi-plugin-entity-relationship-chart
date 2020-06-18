@@ -6,6 +6,10 @@ Plugin displays Entity Relationship Diagram of all Strapi models, fields and rel
 
 How to install:
 --------
-1. In a root folder of your strapi project run `npm install strapi-plugin-entity-relationship-chart --save` or `strapi install entity-relationship-chart`
+1. In a root folder of your strapi project run `npm install strapi-plugin-entity-relationship-chart --save`
 2. Rebuild admin UI `strapi build`
 3. Run strapi `strapi develop`
+
+Version Notes:
+-------
+- this plugin was tested with stable version of Strapi - 3.0.2.
