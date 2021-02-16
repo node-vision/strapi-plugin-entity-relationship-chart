@@ -1,5 +1,6 @@
 .srd-diagram {
   height: 80vh;
+  overflow-y: auto;
 }
 
 .srd-default-link path{
