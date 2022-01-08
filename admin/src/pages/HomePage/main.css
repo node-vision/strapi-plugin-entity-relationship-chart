@@ -3,11 +3,11 @@
   overflow-y: auto;
 }
 
-.srd-default-link path{
+.srd-default-link path {
   stroke: #000;
 }
 
-.erc-header-title p{
+.erc-header-title p {
   width: 100%;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -19,7 +19,7 @@
   overflow: hidden;
 }
 
-.erc-header-title h1{
+.erc-header-title h1 {
   position: relative;
   width: -webkit-fit-content;
   width: -moz-fit-content;

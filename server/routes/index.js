@@ -1,0 +1,10 @@
+module.exports = [
+  {
+    method: 'GET',
+    path: '/er-data',
+    handler: 'entity-relationship-chart.getERData',
+    config: {
+      policies: [],
+    },
+  },
+];
