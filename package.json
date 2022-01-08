@@ -1,9 +1,9 @@
 {
   "name": "strapi-plugin-entity-relationship-chart",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Plugin displays Entity Relationship Diagram of all Strapi models, fields and relations.",
   "strapi": {
-    "name": "ER Chart",
+    "name": "er-chart",
     "description": "Plugin displays Entity Relationship Diagram of all Strapi models, fields and relations.",
     "kind": "plugin"
   },
