@@ -12,6 +12,9 @@
     "dagre": "^0.8.5",
     "lodash": "^4.17.21"
   },
+  "peerDependencies": {
+    "@strapi/strapi": "^4.0.2"
+  },
   "author": {
     "name": "Roman Mandryk",
     "email": "info@nodevision.com.au",

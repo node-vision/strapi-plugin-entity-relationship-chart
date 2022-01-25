@@ -10,6 +10,9 @@ Plugin displays Entity Relationship Diagram of all Strapi models, fields and rel
 2. Rebuild admin UI `strapi build`
 3. Run strapi `strapi develop`
 
+## Submitting issues:
+Use github issues on the repo: - https://github.com/node-vision/strapi-plugin-entity-relationship-chart/issues
+
 ## Version Notes:
 
 - this plugin was tested with stable Strapi - 4.0.2
