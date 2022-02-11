@@ -1,11 +1,11 @@
 .srd-diagram {
   height: 80vh;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
-.srd-default-link path {
+/* .srd-default-link path {
   stroke: #000;
-}
+} */
 
 .erc-header-title p {
   width: 100%;
