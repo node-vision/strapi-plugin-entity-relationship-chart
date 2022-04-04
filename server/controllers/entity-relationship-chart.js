@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /**
  * entity-relationship-chart.js controller
@@ -6,32 +6,35 @@
  * @description: A set of functions called "actions" of the `entity-relationship-chart` plugin.
  */
 
-const userPermissionModels = ['User', 'Role', 'Permission'];
-
 module.exports = {
-  /**
-   * Default action.
-   *
-   * @return {Object}
-   */
+  getTablesRelationData: async (ctx) => {
+    const exclude = strapi.config.get('plugin.entity-relationship-chart.exclude')
+    const uids = Array.from(strapi.db.metadata.keys()).filter(uid => !exclude.includes(uid))
 
-  index: async (ctx) => {
-    ctx.send({
-      message: 'ok',
-    });
+    return uids.map(uid => {
+      const model = strapi.db.metadata.get(uid)
+
+      return {
+        key: model.uid,
+        name: model.tableName,
+        attributes: model.attributes,
+        componentLink: model.componentLink,
+        indexes: model.indexes,
+        foreignKeys: model.foreignKeys,
+        columnToAttribute: model.columnToAttribute,
+      }
+    })
   },
-
-  getERData: async (ctx) => {
+  getEntitiesRelationData: async (ctx) => {
     const { models } = strapi.db.config;
-    const data = models
-      .filter((m) => m.kind === 'collectionType' && (!m.plugin || m.plugin === 'users-permissions'))
-      .map((m) => ({
-        name: m.info.singularName,
-        attributes: m.attributes,
-        key: m.info.singularName,
-      }));
-    ctx.send({
-      data,
-    });
+    const exclude = strapi.config.get('plugin.entity-relationship-chart.exclude')
+
+    return models.filter(model => !exclude.includes(model.uid)).map((m) => ({
+      name: m.tableName,
+      attributes: m.attributes,
+      key: m.uid,
+      modelType: m.modelType,
+      kind: m.kind,
+    }));
   },
 };
