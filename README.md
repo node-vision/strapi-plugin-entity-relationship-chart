@@ -48,4 +48,4 @@ Use github issues on the repo: - https://github.com/node-vision/strapi-plugin-en
 
 ## Version Notes:
 
-- this plugin was tested with stable Strapi - 4.0.2
+- this plugin was tested with stable Strapi - 4.0.6
