@@ -103,13 +103,18 @@ const HomePage = () => {
       if (type === undefined && erData) {
         const { engine, model } = drawEntityNodes(erData, { relations, components, dynamiczones });
         setEngine(engine);
-        dagreLayout(model)
-        engine.repaintCanvas();
+        setTimeout(() => {
+          dagreLayout(model)
+          engine.repaintCanvas();
+        }, 0)
       } else if (type === 'database' && trData) {
         const { engine, model } = drawDatabaseNodes(trData, { relations, components, dynamiczones });
         setEngine(engine);
-        dagreLayout(model)
-        engine.repaintCanvas();
+        setTimeout(() => {
+          dagreLayout(model);
+          engine.repaintCanvas();
+        }, 0);
+
       }
     }, 0)
   }, [type, erData, trData, relations, components, dynamiczones]);
