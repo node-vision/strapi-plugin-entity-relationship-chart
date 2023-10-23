@@ -1,11 +1,11 @@
-import dagre from 'dagre';
+import dagre from '@dagrejs/dagre';
 import { 
   PointModel,
 } from './storm-react-diagrams';
 
 export function dagreLayout(model) {
   // Create a new directed graph
-  var g = new dagre.graphlib.Graph({
+  const g = new dagre.graphlib.Graph({
     multigraph: true,
     compound: true,
   });
@@ -22,7 +22,7 @@ export function dagreLayout(model) {
 
   // set nodes
   _.forEach(model.getNodes(), (node) => {
-    g.setNode(node.getID(), { width: node.width, height: node.height });
+    g.setNode(node.getID(), {label: node.getID(), width: node.width, height: node.height });
   });
 
   _.forEach(model.getLinks(), (link) => {
