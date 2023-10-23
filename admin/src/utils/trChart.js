@@ -153,7 +153,7 @@ export function drawDatabaseNodes(data, options) {
         }
         if (!inverseJoinColumn) {
           // todo: morph
-          console.log('inverseJoinColumn missing22', joinTable);
+          //console.log('inverseJoinColumn missing', joinTable);
           continue;
         }
         
