@@ -32,6 +32,7 @@ module.exports = () => ({
         "admin::user",
         "admin::role",
         "admin::transfer-token",
+        "admin::transfer-token-permission",
         "admin::api-token",
         "admin::api-token-permission",
         "plugin::upload.file",
